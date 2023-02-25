@@ -1,0 +1,227 @@
+{
+	"info": {
+		"_postman_id": "ecdfd99e-d88b-40c6-bbc0-eb3df0354b96",
+		"name": "Irrigation Rest Calls",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add new plot of land",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"area\": 100,\n\"description\": \"Farm 202\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/plotOfLand",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"plotOfLand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Configure a plot of land",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fromTimestamp\":\"2014-04-28T16:00:49.455\" ,\n\t\"toTimestamp\":\"2014-04-28T17:00:49.455\",\n    \"waterAmount\":20,\n\t\"sensorId\":\"Si223232\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/configure/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"configure",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Integration interface",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"order\": { \"id\":102, \n    \"name\":\"mobily\",\n    \"qty\":1,\n    \"price\":100\n   },\n   \"payment\":{}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/plotOfLand/confguration/1/irrigate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"plotOfLand",
+						"confguration",
+						"1",
+						"irrigate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retry Test Case",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"order\": { \"id\":102, \n    \"name\":\"mobily\",\n    \"qty\":1,\n    \"price\":100\n   },\n   \"payment\":{}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/plotOfLand/confguration/3/irrigate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"plotOfLand",
+						"confguration",
+						"3",
+						"irrigate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all plots and it's details",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"order\": { \"id\":102, \n    \"name\":\"mobily\",\n    \"qty\":1,\n    \"price\":100\n   },\n   \"payment\":{}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/plotOfLand?pageNo=0&pageSize=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"plotOfLand"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Plot of land",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"area\": 200,\n\"description\": \"Farm 400\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/plotOfLand/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"plotOfLand",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit plot of land configuration",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fromTimestamp\":\"2014-04-28T16:00:49.455\" ,\n\t\"toTimestamp\":\"2014-04-28T17:00:49.455\",\n    \"waterAmount\":260,\n\t\"sensorId\":\"Si44\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9192/configure/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9192",
+					"path": [
+						"configure",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,15 @@
+server:
+ port: 9192
+spring:
+ h2:
+  console:
+   enabled: true
+ application:
+  name: PlotOfLandService
+
+resilience4j:
+  retry:
+    instances:
+      sensorService:
+        maxRetryAttempts: 4
+        waitDuration: 5s  
