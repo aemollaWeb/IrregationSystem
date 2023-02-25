@@ -1,6 +1,4 @@
-## State Machine 
-
-![state diagram](src/main/resources/img.png?raw=true "Statemachine diagram")
+## Irrigation system
 
 ### requirement to set up the service
 
